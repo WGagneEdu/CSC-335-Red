@@ -19,6 +19,7 @@ create table art_items (
 create table users (
 	name varchar(128) not null,
 	email varchar(64) unique,
+	password varchar(128) not null,
 	primary key(email)
 );
 
@@ -52,7 +53,7 @@ create table event_features (
 	item_id int,
 	event_date date,
 	event_location varchar(64),
-	user_email int,
+	user_email varchar(64),
 	foreign key(item_id) references art_items(id),
 	foreign key(user_email) references users(email)
 );
